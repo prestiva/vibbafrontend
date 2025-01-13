@@ -1,81 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Vibba Bot</title>
-<style>
-  #vibba-bot-frame {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    border: none;
-    z-index: 9999;
-    transition: all 0.3s ease-in-out;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    width: 56px;
-    height: 56px;
-  }
-  #vibba-bot-frame:hover {
-    transform: scale(1.05);
-  }
-  #vibba-bot-frame.open {
-    border-radius: 16px;
-    transform: none;
-  }
-  @media (min-width: 640px) {
-    #vibba-bot-frame {
-      width: 64px;
-      height: 64px;
-    }
-  }
-  @media (max-width: 640px) {
-    #vibba-bot-frame.open {
-      border-radius: 0;
-    }
-  }
-</style>
-</head>
-<body>
-
-<iframe
-  id="vibba-bot-frame"
-  src="https://vibbaai.vercel.app/chatbot"
-  title="Vibba Bot"
-  style="box-shadow: 0 8px 20px rgba(43, 136, 148, 0.3);"
-></iframe>
-
-<script>
-  const iframe = document.getElementById('vibba-bot-frame');
-  let isOpen = false;
-
-  iframe.addEventListener('click', () => {
-    isOpen = !isOpen;
-    updateIframeSize();
-  });
-
-  function updateIframeSize() {
-    const isMobile = window.innerWidth < 640;
-    if (isOpen) {
-      iframe.style.width = isMobile ? '100%' : '400px';
-      iframe.style.height = isMobile ? '100%' : '500px';
-      iframe.style.bottom = isMobile ? '0' : '24px';
-      iframe.style.right = isMobile ? '0' : '24px';
-      iframe.classList.add('open');
-    } else {
-      iframe.style.width = isMobile ? '56px' : '64px';
-      iframe.style.height = isMobile ? '56px' : '64px';
-      iframe.style.bottom = '24px';
-      iframe.style.right = '24px';
-      iframe.classList.remove('open');
-    }
-  }
-
-  window.addEventListener('resize', updateIframeSize);
-
-</script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Interface</title>
+    <style>
+      /* Ensure iframe takes full width and height */
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-
