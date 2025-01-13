@@ -55,7 +55,7 @@ export function ChatBot() {
 
   const fetchBotResponse = async (userMessage: string) => {
     try {
-      const response = await fetch(`https://rauhan-vibbaai.hf.space/getResponse?question=${encodeURIComponent(userMessage)}`);
+      const response = await fetch(`https://prestiva-vibbabackend.hf.space/getResponse?question=${encodeURIComponent(userMessage)}`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const text = await response.text();
       return text.replace(/^"|"$/g, '').replace(/\\n/g, '\n').replace(/\\t/g, '\t');
