@@ -135,7 +135,7 @@ export function ChatBot() {
                 <Sparkles size={20} className="text-white animate-pulse" />
                 <div className="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
               </div>
-              <h3 className="font-semibold text-white text-lg tracking-wide">Ice AI Assistant</h3>
+              <h3 className="font-semibold text-white text-lg tracking-wide">Vibba AI</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
